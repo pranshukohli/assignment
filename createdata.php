@@ -9,7 +9,7 @@
 
 	echo 'startk';
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "pwmserver@cse322server", "pwd" => "amith@31129", "Database" => "motordata", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$connectionInfo = array("UID" => "pwmserver@cse322server", "pwd" => "amith@311296", "Database" => "motordata", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:cse322server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 	
@@ -18,7 +18,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 	$stmt = sqlsrv_query( $conn, $sql);
 		echo '21';
-	if (sqlsrv_num_rows($stmt) >=0) {
+	if (sqlsrv_num_rows($stmt) >0) {
 		echo '2';
     // output data of each row
     while($row = sqlsrv_fetch_row($stmt)) {
