@@ -13,7 +13,10 @@ $connectionInfo = array("UID" => "pwmserver@cse322server", "pwd" => "amith@31129
 $serverName = "tcp:cse322server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 	
-echo $conn;
+if($conn){
+echo 'aksgd';
+}
+		
 	$sql = "Select * from motordata";
 
 	$stmt = sqlsrv_query( $conn, $sql);
