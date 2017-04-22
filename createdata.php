@@ -17,10 +17,12 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 	$sql = "Select * from motordata";
 
 	$stmt = sqlsrv_query( $conn, $sql);
-	if ($stmt->sqlsrv_num_rows > 0) {
+	if (sqlsrv_num_rows($stmt) > 0) {
+		echo '2';
     // output data of each row
     while($row = sqlsrv_fetch($stmt)) {
         echo $row['value'];
+	   
     }
 } else {
     echo "0 results";
