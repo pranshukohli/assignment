@@ -17,9 +17,9 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 	$sql = "Select * from motordata";
 
 	$stmt = sqlsrv_query( $conn, $sql);
-	if ($stmt->num_rows > 0) {
+	if ($stmt->sqlsrv_num_rows > 0) {
     // output data of each row
-    while($row = $stmt->fetch_assoc()) {
+    while($row = sqlsrv_fetch($stmt)) {
         echo $row['value'];
     }
 } else {
