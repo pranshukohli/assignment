@@ -22,14 +22,15 @@ echo 'aksgd';
 	$stmt = sqlsrv_query( $conn, $sql);
 		echo '21';
 	
-		
+		if(sqlsrv_has_rows($stmt)){
     // output data of each row
+			echo '123';
     while($row = sqlsrv_fetch_array($stmt)) {
         echo $row['value'];
 	   
     }
 		
-
+		}
 
 
 	echo '2j';
