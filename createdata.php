@@ -24,7 +24,7 @@ echo 'aksgd';
 	
 		
     // output data of each row
-    while($row = sqlsrv_fetch_row($stmt)) {
+    while($row = sqlsrv_fetch_array($stmt)) {
         echo $row['value'];
 	   
     }
