@@ -17,13 +17,14 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 	$sql = "Select * from motordata";
 
 	$stmt = sqlsrv_query( $conn, $sql);
-	if( $stmt === false ) {
-		 die( print_r( sqlsrv_errors(), true));
-	}
-	else
-	{
-		echo $stmt['value'];
-	}
+	if ($stmt->num_rows > 0) {
+    // output data of each row
+    while($row = $stmt->fetch_assoc()) {
+        echo $row['value'];
+    }
+} else {
+    echo "0 results";
+}
 
 
 	echo '2j';
