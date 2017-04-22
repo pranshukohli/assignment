@@ -18,7 +18,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 	$stmt = sqlsrv_query( $conn, $sql);
 		echo '21';
-	if (sqlsrv_num_rows($stmt) > 0) {
+	if (sqlsrv_num_rows($stmt) >=0) {
 		echo '2';
     // output data of each row
     while($row = sqlsrv_fetch_row($stmt)) {
