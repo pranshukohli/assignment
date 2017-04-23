@@ -36,6 +36,8 @@ echo 'aksgd';
 	echo '2j';
 	
 	echo '3ghhg';
+		        echo "<br><p>".$row['value']."</p>;
+
 	sqlsrv_close( $conn);
 
 ?>
