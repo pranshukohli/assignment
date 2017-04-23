@@ -14,24 +14,24 @@ $serverName = "tcp:cse322server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 	
 if($conn){
-echo 'aksgd';
+echo 'bh';
 }
 	$row="q";	
-	$sql = "SELECT * FROM motordata ORDER BY id DESC LIMIT 1";
+	$sql = "SELECT value FROM motordata ORDER BY ID DESC LIMIT 1";
 
 	$stmt = sqlsrv_query( $conn, $sql);
-		echo '21';
+		echo 'jji';
 	
 		if(sqlsrv_has_rows($stmt)){
     // output data of each row
-			echo '123';
+			echo '666';
     while($row = sqlsrv_fetch_array($stmt)) {
-        echo $row['value'];
+        echo "<br><p>".$row['value']."</p><br>";
 	   
     }
 		
 		}
-	echo "sdfg";
+	echo "gfhjk";
 
 	sqlsrv_close( $conn);
 
