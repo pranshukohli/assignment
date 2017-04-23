@@ -17,7 +17,7 @@ if($conn){
 echo 'aksgd';
 }
 	$row="q";	
-	$sql = "Select * from motordata";
+	$sql = "SELECT * FROM motordata ORDER BY id DESC LIMIT 1";
 
 	$stmt = sqlsrv_query( $conn, $sql);
 		echo '21';
@@ -31,12 +31,7 @@ echo 'aksgd';
     }
 		
 		}
-
-
-	echo '2j';
-	
-	echo '3ghhg';
-	echo "<br><p>".$row['value']."</p>";
+	echo "sdfg";
 
 	sqlsrv_close( $conn);
 
