@@ -2,15 +2,18 @@
 <head>
 	<title>qwertyuio</title>
 <script>
-function addData(str) {
+function addData(str) 
+{
 		alert('0');
 
         var xmlhttp = new XMLHttpRequest();
 	alert('1');
-        xmlhttp.onreadystatechange = function() {
+        xmlhttp.onreadystatechange = function() 
+	{
 			alert('2');
 
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState == 4 && this.status == 200) 
+	    {
                 document.getElementById("rval").innerHTML = this.responseText;
             }
 			alert('3');
@@ -22,7 +25,6 @@ function addData(str) {
         xmlhttp.send();
 		alert('5');
 
-    }
 }
 </script>
 </head>
