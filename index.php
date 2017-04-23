@@ -1,7 +1,10 @@
 <html>
 <head>
+	<title>qwertyuio</title>
 <script>
 function addData(str) {
+		alert('0');
+
         var xmlhttp = new XMLHttpRequest();
 	alert('1');
         xmlhttp.onreadystatechange = function() {
