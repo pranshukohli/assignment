@@ -17,7 +17,7 @@ if($conn){
 echo 'bh';
 }
 	$row="q";	
-	$sql = "SELECT value FROM motordata ";
+	$sql = "SELECT value FROM motordata ORDER BY ID DESC LIMIT 2";
 
 	$stmt = sqlsrv_query( $conn, $sql);
 		echo 'jji';
@@ -26,7 +26,7 @@ echo 'bh';
     // output data of each row
 			echo '666';
     while($row = sqlsrv_fetch_array($stmt)) {
-        echo "<br><p>".$row['value']."</p><br>";
+        echo "<p>".$row['value']."</p>";
 	   
     }
 		
