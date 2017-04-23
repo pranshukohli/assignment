@@ -3,13 +3,22 @@
 <script>
 function addData(str) {
         var xmlhttp = new XMLHttpRequest();
+	alert('1');
         xmlhttp.onreadystatechange = function() {
+			alert('2');
+
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("rval").innerHTML = this.responseText;
             }
+			alert('3');
+
         };
         xmlhttp.open("GET", "http://motorcon.azurewebsites.net/putdata.php?value=" + str, true);
+		alert('4');
+
         xmlhttp.send();
+		alert('5');
+
     }
 }
 </script>
