@@ -16,7 +16,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 if($conn){
 echo 'aksgd';
 }
-		
+	$row="q";	
 	$sql = "Select * from motordata";
 
 	$stmt = sqlsrv_query( $conn, $sql);
@@ -36,7 +36,7 @@ echo 'aksgd';
 	echo '2j';
 	
 	echo '3ghhg';
-		        echo "<br><p>".$row['value']."</p>";
+	echo "<br><p>".$row['value']."</p>";
 
 	sqlsrv_close( $conn);
 
