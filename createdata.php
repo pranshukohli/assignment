@@ -7,7 +7,7 @@
 	<body>
 		<?php
 
-	//echo 'startk';
+	echo 'startk';
 // SQL Server Extension Sample Code:
 $connectionInfo = array("UID" => "pwmserver@cse322server", "pwd" => "amith@311296", "Database" => "motordata", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:cse322server.database.windows.net,1433";
