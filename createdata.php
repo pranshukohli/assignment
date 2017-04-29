@@ -14,7 +14,7 @@ $serverName = "tcp:cse322server.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 	
 if($conn){
-//echo 'bh';
+echo 'bh';
 }
 	$row="q";	
 	$sql = "SELECT value FROM motordata where ID=(select MAX(ID) from motordata);";
@@ -31,7 +31,7 @@ if($conn){
     }
 		
 		}
-	//echo "gfhjk";
+	echo "gfhjk";
 
 	sqlsrv_close( $conn);
 
