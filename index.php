@@ -83,6 +83,6 @@ function addData(str)
 <button onclick="addData('02550255')" id="b3">Backward</button>
 <button onclick="addData('12550255')" id="b4">LEFT</button>
 <button onclick="addData('00000000')" id="b5">STOP</button>
-<p>Last Added: <span id="rval"></span></p>
+<p style="color: yellow">Last Added: <span id="rval"></span></p>
 </body>
 </html>
