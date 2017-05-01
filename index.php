@@ -64,7 +64,7 @@ function addData(str)
 
             if (this.readyState == 4 && this.status == 200) 
 	    {
-                document.getElementById("rval").innerHTML = this.responseText;
+                document.getElementById("rval").innerHTML = this.responseText + str;
             }
 
         };
