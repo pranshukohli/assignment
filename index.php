@@ -57,22 +57,31 @@ Workshop
 			$connectionInfo = array("UID" => "interserver@interserver", "pwd" => "qwerty#123", "Database" => "base", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:interserver.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
-			?>
-			<?php
-			$query=mysqli_query($con,'select * from workshops');
-			while($result=mysqli_fetch_row($query))
-			{
-				
-				echo "<div class='row'>";
-				echo '<div class="col-sm-5">'.$result[1].'</div>';
-				echo '<div class="col-sm-3">'.$result[3].'</div>';
-				echo '<div class="col-sm-2">'.$result[4].'</div>';
+			
+			if($conn){
+//echo 'bh';
+}	
+	$sql = "SELECT * FROM workshops;";
+	$stmt = sqlsrv_query( $conn, $sql);
+		//echo 'jji';
+	
+		if(sqlsrv_has_rows($stmt)){
+    // output data of each row
+			//echo '666';
+    while($result = sqlsrv_fetch_array($stmt)) {
+        echo "<div class='row'>";
+				echo '<div class="col-sm-5">'.$result['title'].'</div>';
+				echo '<div class="col-sm-3">'.$result['venue'].'</div>';
+				echo '<div class="col-sm-2">'.$result['applylastdate'].'</div>';
 								echo '<div class="col-sm-2"><button type="button" class="btn btn-light"><a href="apply.php/?ws='.$result[6].'">Apply Now</a></button></div>';
 
 			    echo "</div>";
-			}
-			
-			?>
+	   
+    }
+		
+		}
+	//echo "gfhjk";
+	sqlsrv_close( $conn);
 		</div>
 	</div>
 	<div class="col-md-2">
