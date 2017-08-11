@@ -68,7 +68,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 		if(sqlsrv_has_rows($stmt)){
     // output data of each row
 			//echo '666';
-    while($result = sqlsrv_fetch_row($stmt)) {
+    while($result = sqlsrv_fetch_array($stmt)) {
         echo "<div class='row'>";
 				echo '<div class="col-sm-5">'.$result[1].'</div>';
 				echo '<div class="col-sm-3">'.$result[3].'</div>';
