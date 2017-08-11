@@ -73,7 +73,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 				echo '<div class="col-sm-5">'.$result['title'].'</div>';
 				echo '<div class="col-sm-3">'.$result['venue'].'</div>';
 				echo '<div class="col-sm-2">'.$result['applylastdate'].'</div>';
-								echo '<div class="col-sm-2"><button type="button" class="btn btn-light"><a href="apply.php/?ws='.$result[6].'">Apply Now</a></button></div>';
+								echo '<div class="col-sm-2"><button type="button" class="btn btn-light"><a href="apply.php/?ws='.$result['val'].'">Apply Now</a></button></div>';
 
 			    echo "</div>";
 	   
