@@ -71,8 +71,8 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
     while($result = sqlsrv_fetch_array($stmt)) {
         echo "<div class='row'>";
 				echo '<div class="col-sm-5">'.$result[1].'</div>';
-				echo '<div class="col-sm-3">'.$result[3].'</div>';
-				echo '<div class="col-sm-2">'.$result[4].'</div>';
+				echo '<div class="col-sm-3">'.$result[4].'</div>';
+				echo '<div class="col-sm-2">'.$result[3].'</div>';
 				echo '<div class="col-sm-2"><button type="button" class="btn btn-light"><a href="apply.php/?ws='.$result[6].'">Apply Now</a></button></div>';
 
 			    echo "</div>";
