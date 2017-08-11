@@ -1,6 +1,4 @@
-<?php
-	include_once('config.php');
-?>
+
 <html>
 <title>
 Workshop
@@ -55,6 +53,11 @@ Workshop
 					<div class="col-sm-2"></div>
 				</div>
 			</div>
+			<?php
+			$connectionInfo = array("UID" => "interserver@interserver", "pwd" => "qwerty#123", "Database" => "base", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:interserver.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+			?>
 			<?php
 			$query=mysqli_query($con,'select * from workshops');
 			while($result=mysqli_fetch_row($query))
