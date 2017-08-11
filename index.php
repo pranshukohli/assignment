@@ -68,12 +68,12 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 		if(sqlsrv_has_rows($stmt)){
     // output data of each row
 			//echo '666';
-    while($result = sqlsrv_fetch_array($stmt)) {
+    while($result = sqlsrv_fetch_row($stmt)) {
         echo "<div class='row'>";
-				echo '<div class="col-sm-5">'.$result['title'].'</div>';
-				echo '<div class="col-sm-3">'.$result['venue'].'</div>';
-				echo '<div class="col-sm-2">'.$result['ondate'].'</div>';
-				echo '<div class="col-sm-2"><button type="button" class="btn btn-light"><a href="apply.php/?ws='.$result['val'].'">Apply Now</a></button></div>';
+				echo '<div class="col-sm-5">'.$result[1].'</div>';
+				echo '<div class="col-sm-3">'.$result[3].'</div>';
+				echo '<div class="col-sm-2">'.$result[4].'</div>';
+				echo '<div class="col-sm-2"><button type="button" class="btn btn-light"><a href="apply.php/?ws='.$result[6].'">Apply Now</a></button></div>';
 
 			    echo "</div>";
 	   
