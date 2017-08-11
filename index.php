@@ -82,6 +82,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 		}
 	//echo "gfhjk";
 	sqlsrv_close( $conn);
+			?>
 		</div>
 	</div>
 	<div class="col-md-2">
