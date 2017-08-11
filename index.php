@@ -1,88 +1,80 @@
+<?php
+	include_once('config.php');
+?>
 <html>
+<title>
+Workshop
+</title>
 <head>
-	<title>qwertyuio</title>
-	<style>
-body  {
-    background-image: url("a.jpg");
-    background-color: #cccccc;
-	 background-size: 1400px 680px;
-	 background-repeat:no-repeat;
-	
-}
-button {
- 
- position: absolute;
-   background-color: #000000;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
- }
- 
-button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.3),0 17px 50px 0 rgba(0,0,0,0.19);
-}
 
-button#b1 {
-    top: 30%; left: 40%;
-    
-}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" href="css/index.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-button#b2 {
-    top: 40%; left: 50%;
-    
-}
 
-button#b3 {
-    top: 50%; left: 40%;
-   
-}
-
-button#b4 {
-    top: 40%; left: 30%;
-    
-}
-button#b5 {
-    top: 40%; left: 40%;
-    
-}
-	</style>
-<script>
-function addData(str) 
-{
-
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() 
-	{
-
-            if (this.readyState == 4 && this.status == 200) 
-	    {
-                document.getElementById("rval").innerHTML = this.responseText + str;
-            }
-
-        };
-        xmlhttp.open("GET", "http://motorcon.azurewebsites.net/putdata.php?value=" + str, true);
-
-        xmlhttp.send();
-
-}
-</script>
 </head>
 <body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Workshops</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.php">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="signup.php">Sign up</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<div class="row">
+	<div class="col-md-2">
+	</div>
+	
+	<div class="col-md-8">
+		<div class="gridx">
+		
+			<h2>Live Workshops</h2>
+		
+			<div class="hidden-sm-down head">
+				<div class='row'>
+					<div class="col-sm-5">Title</div>
+					<div class="col-sm-3">Venue</div>
+					<div class="col-sm-2">Last Date</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+			<?php
+			$query=mysqli_query($con,'select * from workshops');
+			while($result=mysqli_fetch_row($query))
+			{
+				
+				echo "<div class='row'>";
+				echo '<div class="col-sm-5">'.$result[1].'</div>';
+				echo '<div class="col-sm-3">'.$result[3].'</div>';
+				echo '<div class="col-sm-2">'.$result[4].'</div>';
+								echo '<div class="col-sm-2"><button type="button" class="btn btn-light"><a href="apply.php/?ws='.$result[6].'">Apply Now</a></button></div>';
 
-	<button onclick="addData('12551255')" id="b1">Forward&nbsp;&nbsp;&nbsp;</button>
-<button onclick="addData('02551255')" id="b2">RIGHT</button>
-<button onclick="addData('02550255')" id="b3">Backward</button>
-<button onclick="addData('12550255')" id="b4">LEFT</button>
-<button onclick="addData('00000000')" id="b5">STOP</button>
-<p style="color: yellow">Last Added: <span id="rval"></span></p>
+			    echo "</div>";
+			}
+			
+			?>
+		</div>
+	</div>
+	<div class="col-md-2">
+	</div>
+</div>
+
 </body>
 </html>
