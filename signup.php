@@ -38,7 +38,7 @@ Workshop | SignUP
 	<div class="col-md-2">
 	</div>
 	<div class="col-md-8">
-		<div class="gridx">
+		<div class="signUpBox">
 			<h2>Live Workshops</h2>
       <form>
         <div class="form-group">
