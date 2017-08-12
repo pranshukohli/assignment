@@ -40,7 +40,7 @@ Workshop | SignUP
 	</div>
 	<div class="col-md-8">
 		<div class="signUpBox">
-			<h2>Live Workshops</h2>
+			<h2>Sign Up</h2>
       <form>
         <div class="form-group">
           <label for="emailInput">Email</label>
