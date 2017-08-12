@@ -33,5 +33,24 @@ Workshop | SignUP
     </ul>
   </div>
 </nav>
+
+<form>
+  <div class="form-group">
+    <label for="emailInput">Email</label>
+    <input type="email" class="form-control" id="emailInput aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">This Will be your username</small>
+  </div>
+  <div class="form-group">
+    <label for="passInput">Password</label>
+    <input type="password" class="form-control" id="passInput" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input">
+      Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </body>
 </html>
