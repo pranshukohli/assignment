@@ -43,12 +43,10 @@ Workshop | SignUP
 			<h2>Sign Up</h2>
       <form>
         <div class="form-group">
-          <label for="emailInput">Email</label>
           <input type="email" class="form-control" id="emailInput aria-describedby="emailHelp" placeholder="Enter email">
           <small id="emailHelp" class="form-text text-muted">This Will be your username</small>
         </div>
         <div class="form-group">
-          <label for="passInput">Password</label>
           <input type="password" class="form-control" id="passInput" placeholder="Password">
         </div>
         <div class="form-check">
